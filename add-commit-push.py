@@ -12,16 +12,19 @@ if numOfArgs == 3:
 
 print (message) 
 
+
+
 print ("add-commit-push")
 print("\ngit status")
 os.system("git status")
 
 #w3c schools code
-print("Do you want to continue with add commit push? (y):")
-confirm = input()
-if confirm != "y":
-    print("canceling", confirm)
-    quit()
+if numOfArgs != 2:
+    print("Do you want to continue with add commit push? (y):")
+    confirm = input()
+    if confirm != "y":
+        print("canceling", confirm)
+        quit()
 
 print("\ngit add -A")
 os.system("git add -A")
@@ -29,8 +32,6 @@ os.system("git add -A")
 commitStatement = '\ngit commit -m "' + message + '"'
 print(commitStatement)
 os.system(commitStatement)
-#print('\ngit commit -m "Update files"')
-#os.system ('git commit -m "Update files"')
 
 print("\ngit push")
 os.system ("git push")
